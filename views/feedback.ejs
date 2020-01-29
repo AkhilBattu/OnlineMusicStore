@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Store</title>
+  <link href="../resources/styling/styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+<% }%>
+<div id ="content3">
+  <% include ./partials/site-navigation.ejs %>
+
+<div id="content2">
+<button onclick="location.href='categories'">Back</button><br>
+
+<h2>Give your feedback for the Music</h2>
+
+  <h4><a href="/index">Home</a> >
+  <a href="/categories">Categories </a>> Feedback</h4>
+  	<h2><img src="<%=allItems[0].getImageURL%>" alt="<%=allItems[0].itemName%>" title="<%=allItems[0].itemName%>" width="130" height="190"></B></h2>
+    <form method="POST" action="/action?action=feedback&theItem=<%= allItems[0].itemCode%>" >
+    <select name="rating" required>
+    <option value="1">1 star</option>
+    <option value="2">2 star</option>
+    <option value="3">3 star</option>
+    <option value="4">4 star</option>
+    <option value="5">5 star</option>
+  </select>
+<input type="submit" value="Rate It!">
+</form>
+
+
+<form method="POST" action="/action?action=feedback&theItem=<%= allItems[0].itemCode%>">
+  <input type="radio" name="madeIt" value="Yes"> Listened to It!
+  <input type="radio" name="madeIt" value="No"> Never listened!
+  <input type="submit" value="listened">
+</form>
+
+
+
+  </div>
+
+</div>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

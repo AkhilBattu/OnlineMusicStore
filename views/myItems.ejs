@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Store</title>
+  <link href="../resources/styling/styles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+<% }%>
+<div id ="content3">
+  <% include ./partials/site-navigation.ejs %>
+
+<div id="content2">
+  <h3>Hyderbad Music Company</h3>
+<table>
+  <tr>
+    <th>Music Album</th>
+    <th>Music Category</th>
+    <th>My Rating</th>
+    <th>Listened</th>
+
+  </tr>
+
+<% if(allItems.length==0){
+  %>
+<p>No Items to display</p>
+<% }
+
+else {
+
+   for (var i=0;i< allItems.length;i++)
+{%>
+
+<tr>
+  <td><a href="/item?itemCode=<%= allItems[i].itemCode%>"><%= allItems[i].itemName %></a></td>
+  <td><%= allItems[i].catalogCategory %></td>
+  <td><%for(let k =0 ;k < allItems[i].rating; k++){%>
+      <span class="fa fa-star checked"></span>
+      <% } %>
+    </td>
+  <td><%= allItems[i].madeIt %></td>
+  <td>
+
+  <button onClick="window.location.href = '/myItems?action=update&theItem=<%= allItems[i].itemCode%>'">update</button></td>
+  <td><button onClick="window.location.href = '/myItems?action=delete&theItem=<%= allItems[i].itemCode%>'">delete</button>
+    </td>
+
+
+
+</tr>
+<%}
+}%>
+
+  </table>
+<a href="#"=>click here></a> To suggest similar music
+</div>
+</div>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

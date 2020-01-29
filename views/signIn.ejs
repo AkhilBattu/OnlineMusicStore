@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Store</title>
+  <link href="../resources/styling/styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <%= if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+<% }%>
+<div id ="content3">
+  <% include ./partials/site-navigation.ejs %>
+
+<div id="content2">
+
+<h2> Hyderbad Music Center</h2>
+<p>Sign In to your music account</p>
+<br>
+
+<ul>
+<div id="form-type">
+<form method="POST" action="/LogIn">
+  <li>Email Address:<br>
+  <input type="text" name="emailAddress"></li><br>
+  <li>Password:<br>
+  <input type="password" name="password"></li><br>
+  <input type="submit" value="LogIn">
+</form>
+<p>Don't have an account?<a href="register">Register here</a></p>
+</div>
+</div>
+
+</div>
+
+ <% include partials/footer.ejs %>
+
+
+</body>
+</html>

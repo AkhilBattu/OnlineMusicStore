@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Store</title>
+  <link href="../resources/styling/styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+<% }%>
+<div id ="content3">
+  <% include ./partials/site-navigation.ejs %>
+
+<div id="content2">
+<a  href=index>Home</a> &gt;
+<a  href=categories>Categories</a>
+
+<%var CategoryTypes=[];
+   data.forEach(function(element){%>
+
+    <% if(!CategoryTypes.includes(element.catalogCategory))
+     {
+       CategoryTypes.push(element.catalogCategory);%>
+
+     <%}
+   });%>
+
+   <%
+   while(CategoryTypes.length!=0)
+   {
+   var category=CategoryTypes[0];
+
+   CategoryTypes.splice(0,1);
+   %>
+
+
+   <h3> <%=category%></h3>
+
+   <%data.forEach(function(element){
+       if(element.catalogCategory === category){%>
+   <a href="/item?itemCode=<%=element.itemCode%>"><ul><%=element.itemName%></ul></a>
+
+
+   <%}%>
+   <%})}%>
+
+</div>
+</div>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

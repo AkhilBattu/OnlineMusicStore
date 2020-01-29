@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Store</title>
+  <link href="../resources/styling/styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+<% }%>
+<div id ="content3">
+  <% include ./partials/site-navigation.ejs %>
+
+<div id="content2">
+<div id="form-type">
+<ul>
+<div id="form-type">
+<form method="POST" action="/register">
+  <li><label for="UserId">User ID</label>
+  <input type="text" name="userid"></li>
+  <li><label for="FirstName">First Name</label>
+  <input type="text" name="FirstName"></li>
+  <li><label for="LastName">Last Name</label>
+  <input type="text" name="LastName"></li>
+  <li><label for="EmailAddress">Email Adress</label>
+  <input type="text" name="EmailAddress"></li>
+  <li><label for="Password">Password</label>
+  <input type="password" name="password"></li>
+  <li><label for="AddressLine1">Address Line 1</label>
+  <input type="text" name="AddressLine1"></li>
+  <li><label for="AddressLine2">Address Line 2</label>
+  <input type="text" name="AddressLine2"></li>
+  <li><label for="City">City</label>
+  <input type="text" name="City"></li>
+  <li><label for="State">State</label>
+  <input type="text" name="State"></li>
+  <li><label for="PostalCode">Postal Code</label>
+  <input type="text" name="PostalCode"></li>
+  <li><label for="Country">Country</label>
+  <input type="text" name="Country"></li>
+
+  <button type="submit">Submit</button>
+</form>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+ <% include partials/footer.ejs %>
+
+
+</body>
+</html>

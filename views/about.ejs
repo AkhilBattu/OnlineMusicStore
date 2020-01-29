@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Store</title>
+  <link href="../resources/styling/styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <% if(start.length!=0){%>
+    <% include ./partials/headerLogin.ejs %>
+    <% include ./partials/logout.ejs %>
+<% }
+else{%>
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+<% }%>
+<div id ="content3">
+  <% include ./partials/site-navigation.ejs %>
+
+<div id="content2">
+<a  href=about>About</a>
+
+<p>Hyderbad Music Company is one of the oldest and best stores you will find in Hyderabad</p>
+<p>It provides you with wide variety of music options and an very easy return policy.</p>
+
+</div>
+
+</div>
+
+ <% include partials/footer.ejs %>
+
+
+</body>
+</html>
