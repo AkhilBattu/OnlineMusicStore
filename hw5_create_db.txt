@@ -1,0 +1,147 @@
+﻿db.dropDatabase();
+db.items.insert([
+{
+    itemCode : "001",
+    itemName : "The Marshall Mathers LP",
+    catalogCategory : "Rap Albums",
+    description : "Release Date:05/23/2000;Notes:Explicit Version. 2008 Vinyl pressing of the Marshall Mathers LP is the second commercial and third overall studio album released by US Rapper Eminem, released in 2000. Widely seen as his magnum opus, the album sold over 1.76 million copies in it's first week, earning a spot in the Guinness Book of World Records as the fastest selling Rap album ever. ",
+    rating : "5",
+    getImageURL : "../resources/images/music1.jpg"
+},
+
+{
+    itemCode : "002",
+    itemName : "TheSlimShadyLP",
+    catalogCategory : "Rap Albums",
+    description :  "he Slim Shady LP is the second studio album and the major-label debut[1] by American rapper Eminem. It was released on February 23, 1999 by Aftermath Entertainment and Interscope Records. Recorded in Ferndale, Michigan, following Eminem's recruitment by Dr. Dre and Jimmy Iovine, the album features production from Dr. Dre, the Bass Brothers, and Eminem himself.",
+    rating : "4",
+    getImageURL : "../resources/images/music2.jpg"
+},
+
+{
+    itemCode : "003",
+    itemName : "TheCollegeDropout",
+    catalogCategory : "Rap Albums",
+    description : "The College Dropout is the debut studio album by American rapper and producer Kanye West. It was released on February 10, 2004, by Def Jam Recordings and Roc-A-Fella Records.",
+    rating : "4",
+    getImageURL : "../resources/images/music3.jpg"
+},
+
+{
+    itemCode : "004",
+    itemName : "Thriller",
+    catalogCategory : "Pop Albums",
+    description : "Thriller is a song recorded by American singer Michael Jackson and produced by Quincy Jones. It was released as the seventh and final single from Jackson's album Thriller (1982) on January 23, 1984.Songwriter Rod Temperton wanted to write a theatrical song to suit Jackson's love of film. The music and lyrics evoke horror films, with sound effects such as thunder, footsteps and wind.",
+    rating : "2",
+    getImageURL : "../resources/images/music4.png"
+},
+{
+    itemCode : "005",
+    itemName : "Adele",
+    catalogCategory : "Pop Albums",
+    description : "21 is the second studio album by English singer-songwriter Adele. It was released on 24 January 2011[1] in Europe and on 22 February 2011 in North America by XL Recordings and Columbia Records.21 shares the folk and Motown soul influences of her 2008 debut album 19, but was further inspired by the American country and Southern blues music to which she had been exposed during her 2008–09 North American tour An Evening with Adele",
+    rating : "2",
+    getImageURL : "../resources/images/music5.png"
+},
+{
+    itemCode : "006",
+    itemName : "GoodGirlGoneBad",
+    catalogCategory : "Pop Albums",
+    description : "Good Girl Gone Bad is the third studio album by singer Rihanna. It was released on May 31, 2007, by Def Jam Recordings and SRP Records.",
+    rating : "3",
+    getImageURL : "../resources/images/music6.png"
+}]);
+
+db.useritems.insert([{
+"userId":"abattu",
+ "itemCode":"001",
+"itemName":"The Marshall Mathers LP",
+"catalogCategory":"Rap Albums",
+"getImageURL":"../resources/images/music1.jpg",
+  "rating":"4",
+  "madeIt":"No"
+},
+
+{
+"userId":"abattu",
+ "itemCode" : "003",
+ "itemName" : "TheCollegeDropout",
+ "catalogCategory" : "Rap Albums",
+ "getImageURL" : "../resources/images/music3.jpg",
+ "rating" : "4",
+  "madeIt":"No"
+},
+
+{
+"userId":"abattu",
+"itemCode" : "004",
+"itemName" : "Thriller",
+"catalogCategory" : "Pop Albums",
+"rating" : "2",
+"getImageURL" : "../resources/images/music4.png",
+  "madeIt":"No"
+
+},
+{
+"userId":"kbattu",
+ "itemCode":"001",
+"itemName":"The Marshall Mathers LP",
+"catalogCategory":"Rap Albums",
+"getImageURL":"../resources/images/music1.jpg",
+  "rating":"4",
+  "madeIt":"No"
+},
+
+{
+"userId":"kbattu",
+ "itemCode" : "003",
+ "itemName" : "TheCollegeDropout",
+ "catalogCategory" : "Rap Albums",
+ "getImageURL" : "../resources/images/music3.jpg",
+ "rating" : "4",
+  "madeIt":"No"
+},
+
+{
+"userId":"kbattu",
+"itemCode" : "004",
+"itemName" : "Thriller",
+"catalogCategory" : "Pop Albums",
+"rating" : "2",
+"getImageURL" : "../resources/images/music4.png",
+  "madeIt":"No"
+
+}
+]);
+
+db.users.insert([{
+  "UserId":"kbattu",
+  "Password":"Karthik4u",
+  "FirstName":"Karthik",
+  "LastName":"Battu",
+  "EmailAddress":"kbattu@gmail.com",
+  "City":"Hyderabad",
+  "State":"Telangana",
+
+},
+{
+  "UserId":"abattu",
+  "Password":"Akhil1996",
+  "FirstName":"Akhil",
+  "LastName":"Battu",
+  "EmailAddress":"akhil.battu96@gmail.com",
+  "City":"Charlotte",
+  "State":"NC",
+
+}]);
+
+db.createCollection('userprofiles');
+
+db.userprofiles.insert([{
+"userId":"abattu",
+"userItems":["001","003","004"]
+},
+{
+"userId":"kbattu",
+"userItems":["001","003","004"]
+}]);
