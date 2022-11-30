@@ -116,7 +116,7 @@ db.useritems.insert([{
 
 db.users.insert([{
   "UserId":"kbattu",
-  "Password":"Karthik4u",
+  "Password":"xxx",
   "FirstName":"Karthik",
   "LastName":"Battu",
   "EmailAddress":"kbattu@gmail.com",
@@ -126,7 +126,7 @@ db.users.insert([{
 },
 {
   "UserId":"abattu",
-  "Password":"Akhil1996",
+  "Password":"xxx",
   "FirstName":"Akhil",
   "LastName":"Battu",
   "EmailAddress":"akhil.battu96@gmail.com",
