@@ -8,7 +8,7 @@ var itemUtil=require('../models/itemUtil')
 var allItems=itemUtil.getItems();
 var listofitems=itemUtil.itemcodes();
 var utility=require('../models/itemUtil')
-const { check, validationResult } = require('express-validator/check')
+const { check, validationResult } = require('express-validator')
 
 
 var theUser=function(req,res,next){
