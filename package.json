@@ -8,6 +8,6 @@
     "express-session": "^1.18.0",
     "express-validator": "^6.10.0",
     "mongoose": "^8.3.4",
-    "view": "^0.6.1"
+    "view": "^1.0.0"
   }
 }
